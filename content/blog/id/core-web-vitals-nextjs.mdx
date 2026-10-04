@@ -1,0 +1,26 @@
+Core Web Vitals adalah cara Google menilai pengalaman halamanmu: seberapa cepat konten muncul, seberapa responsif halaman, dan seberapa stabil layout-nya. Di Next.js, sebagian besar kemenangan datang dari checklist pendek.
+
+## Checklist pendek
+
+- **Sajikan format modern.** AVIF dulu, WebP sebagai fallback. Komponen `next/image` mengurus ini saat dikonfigurasi dengan benar.
+- **Ukur gambarmu dengan tepat.** Selalu isi `sizes` agar browser mengunduh varian yang pas — jangan kirim hero 2400px untuk HP 360px.
+- **Prioritaskan gambar LCP.** Hanya hero yang dapat `priority`. Semua yang di bawah fold tetap lazy.
+- **Stabilkan layout.** Beri gambar dimensi eksplisit atau aspect ratio agar konten tidak lompat-lompat.
+
+## Ukur dulu sebelum optimasi
+
+```bash
+npx lighthouse https://situs-kamu.com --only-categories=performance
+```
+
+Jalankan dengan throttling mobile, bukan laptop berfiber optik. Lapangan sesungguhnya adalah tempat usermu berada.
+
+## Target yang sehat
+
+| Metrik | Target |
+| ------ | ------ |
+| LCP | di bawah 2,5 dtk |
+| INP | di bawah 200 mdtk |
+| CLS | di bawah 0,1 |
+
+Penuhi ketiganya di HP kelas menengah dan sitemu akan terasa instan bagi hampir semua orang.

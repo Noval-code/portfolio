@@ -1,0 +1,20 @@
+.initial-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(223, 228, 234, 0.14), transparent 34rem),
+    radial-gradient(circle at 80% 20%, rgba(154, 163, 173, 0.12), transparent 30rem),
+    var(--bg, #08090c);
+  color: var(--text, #f5f7fb);
+}
+
+.initial-loader-inner {
+  width: min(360px, 100%);
+  display: grid;
+  gap: 20px;
+}

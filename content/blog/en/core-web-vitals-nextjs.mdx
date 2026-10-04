@@ -1,0 +1,26 @@
+Core Web Vitals are how Google scores the experience of your pages: how fast content appears, how quickly the page responds, and how stable the layout feels. In Next.js, most of the wins come from a short checklist.
+
+## The short checklist
+
+- **Serve modern formats.** AVIF first, WebP as fallback. The `next/image` component does this for you when configured.
+- **Size your images.** Always pass `sizes` so the browser downloads the right variant — never a 2400px hero for a 360px phone.
+- **Prioritize the LCP image.** Only the hero gets `priority`. Everything below the fold stays lazy.
+- **Stabilize layout.** Give images explicit dimensions or aspect ratios so content does not jump.
+
+## Measure before you optimize
+
+```bash
+npx lighthouse https://your-site.com --only-categories=performance
+```
+
+Run it on mobile throttling, not your fiber-connected laptop. The field is where your users live.
+
+## What good looks like
+
+| Metric | Target |
+| ------ | ------ |
+| LCP | under 2.5s |
+| INP | under 200ms |
+| CLS | under 0.1 |
+
+Hit those three on a mid-range phone and your site will feel instant to almost everyone.

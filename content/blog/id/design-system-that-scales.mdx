@@ -1,0 +1,15 @@
+Setiap design system bermula dari dua tombol dan satu warna. Lalu produk ketiga datang, desainer keempat bergabung, dan tiba-tiba ada sebelas corak abu-abu. Sistem tidak gagal karena kekurangan komponen — melainkan karena kekurangan keputusan.
+
+## Token dulu, komponen kemudian
+
+ Sepakati primitifnya dulu: skala spacing, radius, peran warna (bukan nilai warna), skala tipografi. Komponen yang dibangun di atas token bersama akan konsisten dengan sendirinya. Komponen yang dibangun di atas kode hex akan melenceng dalam hitungan bulan.
+
+## Dokumentasikan kenapanya, bukan cuma apanya
+
+Tabel prop memberi tahu apa yang diterima sebuah tombol. Tapi tidak memberi tahu kapan memakai ghost button versus primary. Halaman paling berharga di design system mana pun adalah halaman panduan yang tak ada yang mau menulis.
+
+## Perlakukan seperti API
+
+Menghapus sebuah prop adalah breaking change. Perlakukan sistem sebagai dependensi: changelog, catatan migrasi, peringatan deprecasi. Konsumenmu adalah rekan setim — beri mereka respek yang sama seperti user eksternal.
+
+Design system yang scalable bukanlah yang komponennya paling banyak. Melainkan yang keputusannya paling jelas.
