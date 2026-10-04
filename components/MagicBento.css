@@ -161,22 +161,37 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  /* Machine Learning — kartu besar 2x2 */
+  /* Frontend — kartu besar 2x2 (kiri atas) */
   .magic-bento-card:nth-child(1) {
     grid-column: 1 / span 2;
     grid-row: 1 / span 2;
   }
 
-  /* Frontend — kartu besar 2x2 */
+  /* Backend — kartu besar 2x2 (kanan atas) */
   .magic-bento-card:nth-child(3) {
     grid-column: 3 / span 2;
     grid-row: 1 / span 2;
   }
 
-  /* Backend — kartu besar 2x2 */
+  /* Baris bawah: Database, ML (lebar 2 kolom), Tools — tinggi sama, tanpa menyentuh baris atas */
+  .magic-bento-card:nth-child(2),
+  .magic-bento-card:nth-child(4),
+  .magic-bento-card:nth-child(5) {
+    grid-row: 3;
+    aspect-ratio: auto;
+    height: 13em;
+  }
+
+  .magic-bento-card:nth-child(2) {
+    grid-column: 1;
+  }
+
   .magic-bento-card:nth-child(4) {
     grid-column: 2 / span 2;
-    grid-row: 3 / span 2;
+  }
+
+  .magic-bento-card:nth-child(5) {
+    grid-column: 4;
   }
 }
 

@@ -146,12 +146,12 @@ const skillGroups = [
   {
     id: "frontend",
     label: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "GSAP", "Tailwind"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue", "Angular", "GSAP", "Tailwind"],
   },
   {
     id: "backend",
     label: "Backend",
-    items: ["Node.js", "REST APIs", "Auth", "System Design"],
+    items: ["Node.js", "PHP", "Laravel", "Express.js", "Python", "Flask"],
   },
   {
     id: "ml",
@@ -170,9 +170,9 @@ const skillGroups = [
   },
 ];
 
-// Frontend & Backend ditata di posisi 3–4 karena grid MagicBento
-// memberi sel 2x2 (ruang paling besar) pada kartu ke-3 dan ke-4 di desktop.
-const bentoCardOrder = ["ml", "database", "frontend", "backend", "tools"];
+// Urutan kartu MagicBento — kartu ke-1, ke-3, dan ke-4 dapat sel 2x2
+// (ruang paling besar) di desktop, sesuai rule nth-child di MagicBento.css.
+const bentoCardOrder = ["frontend", "database", "backend", "ml", "tools"];
 
 const bentoCards: BentoCardData[] = bentoCardOrder
   .map((id) => skillGroups.find((group) => group.id === id))
