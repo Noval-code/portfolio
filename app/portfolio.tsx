@@ -156,17 +156,17 @@ const skillGroups = [
   {
     id: "ml",
     label: "Machine Learning",
-    items: ["Python", "TensorFlow", "Scikit-learn", "Pandas"],
+    items: ["TensorFlow", "NLP", "Chatbot", "RAG", "Web Scraping"],
   },
   {
     id: "database",
     label: "Database",
-    items: ["PostgreSQL", "Prisma"],
+    items: ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Prisma"],
   },
   {
     id: "tools",
     label: "Tools",
-    items: ["Git", "GitLab", "Docker", "Deployment"],
+    items: ["Git", "GitLab", "Docker", "Postman", "Figma", "Automa", "n8n"],
   },
 ];
 
