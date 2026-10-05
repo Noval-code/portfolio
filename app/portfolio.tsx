@@ -35,7 +35,7 @@ const content = {
     finalTitle: "Show both sides of the build.",
     finalBody: "Each case study should explain the interface decisions, the backend architecture, and the tradeoffs behind the final product.",
     stackKicker: "Stack",
-    stackTitle: "A stack shaped for UI polish, product logic, and scalable web systems.",
+    stackTitle: "Built for pixel-perfect UI, sharp logic, and scale.",
     certificatesKicker: "Certificates",
     certificatesTitle: "Credentials that back up the craft.",
     certificatesSub: "Selected certifications across frontend, backend, and cloud — verified and up to date.",
@@ -71,10 +71,16 @@ const content = {
         stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
       },
       {
-        role: "Marketing Automation",
-        company: "F4PROJECT_203",
+        role: "Fullstack Developer",
+        company: "BKR RACING EXHAUST",
         period: "Dec 2025 — Jun 2026",
-        description: "Built browser-automation workflows with Automa to post products from Shopee to Facebook Marketplace — automating titles, descriptions, prices, locations, and listing creation, cutting repetitive manual marketing work.",
+        points: [
+          "Built a Facebook Marketplace automation system to help sellers manage product listings faster and more efficiently.",
+          "Developed interfaces for managing products, posts, and Marketplace listings with simple, responsive, and maintainable workflows.",
+          "Designed a modular backend architecture to handle automation processes and data management in a structured way, making the system easier to maintain and extend.",
+          "Automated workflows from product posting to listing management, reducing repetitive manual work by up to 90% and improving operational efficiency.",
+          "Integrated browser-based automation to execute Marketplace activities consistently, reducing manual intervention and streamlining sellers' daily workflows.",
+        ],
         stack: ["Automa", "Browser Automation", "E-commerce"],
       },
     ],
@@ -96,7 +102,7 @@ const content = {
     finalTitle: "Tampilkan dua sisi dari proses build.",
     finalBody: "Setiap case study sebaiknya menjelaskan keputusan interface, arsitektur backend, dan tradeoff di balik produk akhirnya.",
     stackKicker: "Stack",
-    stackTitle: "Stack yang dibentuk untuk UI polish, logic produk, dan sistem web yang scalable.",
+    stackTitle: "Dibangun untuk UI pixel-perfect, logic tajam, dan siap scale.",
     certificatesKicker: "Sertifikat",
     certificatesTitle: "Kredensial yang mendukung keahlian.",
     certificatesSub: "Sertifikasi pilihan di bidang frontend, backend, dan cloud — terverifikasi dan terkini.",
@@ -132,10 +138,16 @@ const content = {
         stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
       },
       {
-        role: "Marketing Automation",
-        company: "F4PROJECT_203",
+        role: "Fullstack Developer",
+        company: "BKR RACING EXHAUST",
         period: "Des 2025 — Jun 2026",
-        description: "Membangun workflow browser automation dengan Automa untuk memposting produk dari Shopee ke Facebook Marketplace — mengotomatisasi judul, deskripsi, harga, lokasi, dan pembuatan listing sehingga pekerjaan marketing manual yang repetitif berkurang.",
+        points: [
+          "Membangun sistem otomasi Facebook Marketplace untuk membantu penjual mengelola listing produk lebih cepat dan efisien.",
+          "Mengembangkan interface untuk mengelola produk, postingan, dan listing Marketplace dengan workflow yang sederhana, responsif, dan mudah dipelihara.",
+          "Merancang arsitektur backend yang modular untuk menangani proses otomasi dan pengelolaan data secara terstruktur, sehingga sistem lebih mudah dirawat dan dikembangkan.",
+          "Mengotomasi workflow dari posting produk hingga pengelolaan listing, mengurangi pekerjaan manual repetitif hingga 90% dan meningkatkan efisiensi operasional.",
+          "Mengintegrasikan otomasi berbasis browser untuk menjalankan aktivitas Marketplace secara konsisten, mengurangi intervensi manual, dan menyederhanakan workflow harian penjual.",
+        ],
         stack: ["Automa", "Browser Automation", "E-commerce"],
       },
     ],
@@ -631,8 +643,19 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       />
 
       <section id="skills" className="section skills">
-        <p className="section-kicker reveal">{copy.stackKicker}</p>
-        <h2 className="reveal">{copy.stackTitle}</h2>
+        <div className="experience-heading reveal">
+          <ShinyText
+            text={copy.stackKicker}
+            className="experience-work-history"
+            speed={4.5}
+            color="rgba(176, 182, 191, 0.72)"
+            shineColor="rgba(255, 255, 255, 0.95)"
+            spread={88}
+            yoyo
+            delay={0.3}
+          />
+          <h2 className="experience-title">{copy.stackTitle}</h2>
+        </div>
         <div className="skills-bento reveal">
           <MagicBento
             cards={bentoCards}
@@ -653,8 +676,17 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       <section id="certificates" className="section certificates">
         <div className="certificates-heading reveal">
           <div>
-            <p className="section-kicker">{copy.certificatesKicker}</p>
-            <h2>{copy.certificatesTitle}</h2>
+            <ShinyText
+              text={copy.certificatesKicker}
+              className="experience-work-history"
+              speed={4.5}
+              color="rgba(176, 182, 191, 0.72)"
+              shineColor="rgba(255, 255, 255, 0.95)"
+              spread={88}
+              yoyo
+              delay={0.3}
+            />
+            <h2 className="experience-title certificates-title">{copy.certificatesTitle}</h2>
             <p className="certificates-sub">{copy.certificatesSub}</p>
           </div>
           <div className="cert-controls">
