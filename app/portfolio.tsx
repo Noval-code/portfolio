@@ -10,6 +10,13 @@ import { motion, AnimatePresence } from "motion/react";
 import Ferrofluid from "../components/Ferrofluid";
 import ShinyText from "../components/ShinyText";
 import MagicBento, { type BentoCardData } from "../components/MagicBento";
+import {
+  Brain,
+  MessageSquareText,
+  FileSearch,
+  Globe,
+  Workflow,
+} from "lucide-react";
 import ScrollReveal from "../components/ScrollReveal";
 import BlogCard from "../components/BlogCard";
 import ProjectsSection from "../components/portfolio/ProjectsSection";
@@ -186,6 +193,55 @@ const skillGroups = [
 // (ruang paling besar) di desktop, sesuai rule nth-child di MagicBento.css.
 const bentoCardOrder = ["frontend", "database", "backend", "ml", "tools"];
 
+// Ikon teknologi (Devicon / Simple Icons CDN) — dirender dengan efek chrome/silver via CSS.
+const backendIcons: Record<string, string> = {
+  "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  "PHP": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+  "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
+  "Express.js": "https://cdn.simpleicons.org/express/D4D7DC",
+  "Python": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  "Flask": "https://cdn.simpleicons.org/flask/D4D7DC",
+};
+
+const databaseIcons: Record<string, string> = {
+  "PostgreSQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "MySQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  "Supabase": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+  "Prisma": "https://cdn.simpleicons.org/prisma/D4D7DC",
+};
+
+const frontendIcons: Record<string, string> = {
+  "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  "Next.js": "https://cdn.simpleicons.org/nextdotjs/D4D7DC",
+  "TypeScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  "Vue": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+  "Angular": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
+  "GSAP": "https://cdn.simpleicons.org/gsap/D4D7DC",
+  "Tailwind": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+};
+
+// Ikon Machine Learning — TensorFlow pakai Devicon; konsep abstrak (NLP, Chatbot, RAG,
+// Web Scraping) pakai ikon generik lucide-react karena tidak punya logo resmi.
+const mlIcons: Record<string, string | React.ReactNode> = {
+  "TensorFlow": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
+  "NLP": <Brain size={14} />,
+  "Chatbot": <MessageSquareText size={14} />,
+  "RAG": <FileSearch size={14} />,
+  "Web Scraping": <Globe size={14} />,
+};
+
+const toolsIcons: Record<string, string | React.ReactNode> = {
+  "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  "GitLab": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+  "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  "Postman": "https://cdn.simpleicons.org/postman/D4D7DC",
+  "Figma": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  "Automa": <Workflow size={14} />,
+  "n8n": "https://cdn.simpleicons.org/n8n/D4D7DC",
+};
+
 const bentoCards: BentoCardData[] = bentoCardOrder
   .map((id) => skillGroups.find((group) => group.id === id))
   .filter((group): group is (typeof skillGroups)[number] => Boolean(group))
@@ -195,6 +251,18 @@ const bentoCards: BentoCardData[] = bentoCardOrder
     title: group.label,
     description: group.items.join(" · "),
     items: group.items,
+    icons:
+      group.id === "backend"
+        ? backendIcons
+        : group.id === "database"
+          ? databaseIcons
+          : group.id === "frontend"
+            ? frontendIcons
+            : group.id === "ml"
+              ? mlIcons
+              : group.id === "tools"
+                ? toolsIcons
+                : undefined,
   }));
 
 export default function Portfolio({ cms }: { cms: PortfolioCms }) {

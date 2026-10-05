@@ -136,6 +136,44 @@
   color: #ffffff;
 }
 
+/* Chrome / silver effect untuk ikon teknologi di dalam pill */
+.magic-bento-pill__icon {
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.45em;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.6) contrast(1.15)
+    drop-shadow(0 0 3px rgba(212, 215, 220, 0.55));
+  transition: filter 0.3s ease;
+}
+
+.magic-bento-pill:hover .magic-bento-pill__icon {
+  filter: grayscale(0) brightness(1.15) saturate(1.2)
+    drop-shadow(0 0 5px rgba(245, 247, 251, 0.75));
+}
+
+/* Ikon berbasis React node (mis. lucide-react) */
+.magic-bento-pill__icon--node {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: none;
+}
+
+.magic-bento-pill__icon--node svg {
+  width: 1.1em;
+  height: 1.1em;
+  stroke: rgba(245, 247, 251, 0.92);
+  filter: drop-shadow(0 0 3px rgba(212, 215, 220, 0.55));
+  transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.magic-bento-pill:hover .magic-bento-pill__icon--node svg {
+  stroke: #ffffff;
+  filter: drop-shadow(0 0 5px rgba(245, 247, 251, 0.75));
+}
+
 @media (max-width: 599px) {
   .card-grid {
     grid-template-columns: 1fr;
@@ -158,22 +196,23 @@
 
 @media (min-width: 1024px) {
   .card-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
   }
 
-  /* Frontend — kartu besar 2x2 (kiri atas) */
+  /* Frontend — kartu besar 2x2 (kiri atas), tetap 50% lebar */
   .magic-bento-card:nth-child(1) {
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 6;
     grid-row: 1 / span 2;
   }
 
-  /* Backend — kartu besar 2x2 (kanan atas) */
+  /* Backend — kartu besar 2x2 (kanan atas), tetap 50% lebar */
   .magic-bento-card:nth-child(3) {
-    grid-column: 3 / span 2;
+    grid-column: 7 / span 6;
     grid-row: 1 / span 2;
   }
 
-  /* Baris bawah: Database, ML (lebar 2 kolom), Tools — tinggi sama, tanpa menyentuh baris atas */
+  /* Baris bawah: Database (4/12), ML (4/12), Tools (4/12) —
+     Database & Tools lebih lebar, ML lebih sempit, lebar total tetap. */
   .magic-bento-card:nth-child(2),
   .magic-bento-card:nth-child(4),
   .magic-bento-card:nth-child(5) {
@@ -183,15 +222,15 @@
   }
 
   .magic-bento-card:nth-child(2) {
-    grid-column: 1;
+    grid-column: 1 / span 4;
   }
 
   .magic-bento-card:nth-child(4) {
-    grid-column: 2 / span 2;
+    grid-column: 5 / span 4;
   }
 
   .magic-bento-card:nth-child(5) {
-    grid-column: 4;
+    grid-column: 9 / span 4;
   }
 }
 

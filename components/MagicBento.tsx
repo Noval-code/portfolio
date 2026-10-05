@@ -15,6 +15,8 @@ export interface BentoCardData {
   description: string;
   label: string;
   items?: string[];
+  /** Optional per-item icons, keyed by item name. Values are image URLs or React nodes (e.g. lucide icons). */
+  icons?: Record<string, string | ReactNode>;
 }
 
 const defaultCardData: BentoCardData[] = [
@@ -585,9 +587,27 @@ const MagicBento = ({
                 <div className="magic-bento-card__content">
                   {card.items && card.items.length > 0 ? (
                     <div className="magic-bento-card__pills">
-                      {card.items.map((item) => (
-                        <span className="magic-bento-pill" key={item}>{item}</span>
-                      ))}
+                      {card.items.map((item) => {
+                        const icon = card.icons?.[item];
+                        return (
+                          <span className="magic-bento-pill" key={item}>
+                            {typeof icon === 'string' ? (
+                              <img
+                                src={icon}
+                                alt=""
+                                aria-hidden="true"
+                                loading="lazy"
+                                className="magic-bento-pill__icon"
+                              />
+                            ) : icon ? (
+                              <span className="magic-bento-pill__icon magic-bento-pill__icon--node" aria-hidden="true">
+                                {icon}
+                              </span>
+                            ) : null}
+                            {item}
+                          </span>
+                        );
+                      })}
                     </div>
                   ) : (
                     <p className="magic-bento-card__description">{card.description}</p>
@@ -715,9 +735,27 @@ const MagicBento = ({
               <div className="magic-bento-card__content">
                 {card.items && card.items.length > 0 ? (
                   <div className="magic-bento-card__pills">
-                    {card.items.map((item) => (
-                      <span className="magic-bento-pill" key={item}>{item}</span>
-                    ))}
+                    {card.items.map((item) => {
+                      const icon = card.icons?.[item];
+                      return (
+                        <span className="magic-bento-pill" key={item}>
+                          {typeof icon === 'string' ? (
+                            <img
+                              src={icon}
+                              alt=""
+                              aria-hidden="true"
+                              loading="lazy"
+                              className="magic-bento-pill__icon"
+                            />
+                          ) : icon ? (
+                            <span className="magic-bento-pill__icon magic-bento-pill__icon--node" aria-hidden="true">
+                              {icon}
+                            </span>
+                          ) : null}
+                          {item}
+                        </span>
+                      );
+                    })}
                   </div>
                 ) : (
                   <p className="magic-bento-card__description">{card.description}</p>
