@@ -638,6 +638,16 @@ h1 {
   margin-bottom: 1.75rem;
 }
 
+/* Judul "Stack" — heading putih besar biasa */
+.skills-title {
+  max-width: 960px;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.6rem, 6vw, 5.8rem);
+  font-weight: 800;
+  letter-spacing: -0.07em;
+  line-height: 0.95;
+}
+
 .certificates-title {
   margin-top: 14px;
 }

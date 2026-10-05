@@ -42,7 +42,6 @@ const content = {
     finalTitle: "Show both sides of the build.",
     finalBody: "Each case study should explain the interface decisions, the backend architecture, and the tradeoffs behind the final product.",
     stackKicker: "Stack",
-    stackTitle: "Built for pixel-perfect UI, sharp logic, and scale.",
     certificatesKicker: "Certificates",
     certificatesTitle: "Credentials that back up the craft.",
     certificatesSub: "Selected certifications across frontend, backend, and cloud — verified and up to date.",
@@ -109,7 +108,6 @@ const content = {
     finalTitle: "Tampilkan dua sisi dari proses build.",
     finalBody: "Setiap case study sebaiknya menjelaskan keputusan interface, arsitektur backend, dan tradeoff di balik produk akhirnya.",
     stackKicker: "Stack",
-    stackTitle: "Dibangun untuk UI pixel-perfect, logic tajam, dan siap scale.",
     certificatesKicker: "Sertifikat",
     certificatesTitle: "Kredensial yang mendukung keahlian.",
     certificatesSub: "Sertifikasi pilihan di bidang frontend, backend, dan cloud — terverifikasi dan terkini.",
@@ -712,17 +710,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
 
       <section id="skills" className="section skills">
         <div className="experience-heading reveal">
-          <ShinyText
-            text={copy.stackKicker}
-            className="experience-work-history"
-            speed={4.5}
-            color="rgba(176, 182, 191, 0.72)"
-            shineColor="rgba(255, 255, 255, 0.95)"
-            spread={88}
-            yoyo
-            delay={0.3}
-          />
-          <h2 className="experience-title">{copy.stackTitle}</h2>
+          <h2 className="skills-title">{copy.stackKicker}</h2>
         </div>
         <div className="skills-bento reveal">
           <MagicBento
