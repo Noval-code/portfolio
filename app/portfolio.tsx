@@ -169,7 +169,7 @@ const skillGroups = [
   {
     id: "backend",
     label: "Backend",
-    items: ["Node.js", "PHP", "Laravel", "Express.js", "Python", "Flask"],
+    items: ["Golang", "Node.js", "PHP", "Laravel", "Express.js", "Python", "Flask"],
   },
   {
     id: "ml",
@@ -194,6 +194,7 @@ const bentoCardOrder = ["frontend", "database", "backend", "ml", "tools"];
 
 // Ikon teknologi (Devicon / Simple Icons CDN) — dirender dengan efek chrome/silver via CSS.
 const backendIcons: Record<string, string> = {
+  "Golang": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
   "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   "PHP": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
