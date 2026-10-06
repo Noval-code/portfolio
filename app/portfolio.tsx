@@ -10,6 +10,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Ferrofluid from "../components/Ferrofluid";
 import ShinyText from "../components/ShinyText";
 import MagicBento, { type BentoCardData } from "../components/MagicBento";
+import StickerPeel from "../components/StickerPeel";
 import {
   Brain,
   MessageSquareText,
@@ -709,8 +710,19 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       />
 
       <section id="skills" className="section skills">
-        <div className="experience-heading reveal">
+        <div className="experience-heading reveal skills-heading">
           <h2 className="skills-title">{copy.stackKicker}</h2>
+          <StickerPeel
+            imageSrc="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            width={90}
+            rotate={12}
+            peelBackHoverPct={22}
+            peelBackActivePct={38}
+            shadowIntensity={0.5}
+            lightingIntensity={0.08}
+            initialPosition={{ x: 0, y: 0 }}
+            className="skills-sticker"
+          />
         </div>
         <div className="skills-bento reveal">
           <MagicBento

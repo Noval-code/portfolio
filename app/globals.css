@@ -648,6 +648,34 @@ h1 {
   line-height: 0.95;
 }
 
+/* Heading skills jadi anchor untuk sticker peel absolut */
+.skills-heading {
+  position: relative;
+}
+
+/* Sticker peel di samping teks "Stack" */
+.skills-sticker {
+  top: 50%;
+  left: clamp(220px, 24vw, 420px);
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: auto;
+}
+
+@media (max-width: 767px) {
+  .skills-sticker {
+    left: auto;
+    right: 0;
+    top: -40px;
+    transform: none;
+  }
+
+  .skills-sticker .sticker-image,
+  .skills-sticker .flap-image {
+    width: 64px;
+  }
+}
+
 .certificates-title {
   margin-top: 14px;
 }
