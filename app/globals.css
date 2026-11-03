@@ -2049,6 +2049,15 @@ h1 {
     font-size: 0.9rem;
   }
 
+  /* Hero mobile: geser gambar dan teks ke atas */
+  .hero-portrait {
+    bottom: 8svh;
+  }
+
+  .hero-shiny-title {
+    top: 42%;
+  }
+
   /* Projects mobile list (no ScrollStack pinning) */
   .projects-mobile-list {
     width: min(1120px, calc(100% - 32px));
