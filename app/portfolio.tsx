@@ -699,9 +699,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         projects={projects}
         demoComingSoon={language === "en" ? "Demo coming soon" : "Demo menyusul"}
         clientsLabel={copy.clientsLabel}
-        finalKicker={copy.finalKicker}
-        finalTitle={copy.finalTitle}
-        finalBody={copy.finalBody}
       />
 
       <ExperienceSection

@@ -2048,4 +2048,45 @@ h1 {
   .hero-copy-right p {
     font-size: 0.9rem;
   }
+
+  /* Projects mobile list (no ScrollStack pinning) */
+  .projects-mobile-list {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    display: grid;
+    gap: 18px;
+  }
+
+  /* Blog responsive */
+  .blog-page {
+    padding: 100px 0 64px;
+  }
+
+  .blog-page-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .blog-list,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
+    min-height: 220px;
+    padding: 18px;
+  }
+
+  .blog-heading h2 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  .article {
+    width: 100%;
+  }
+
+  .article-header h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
 }
