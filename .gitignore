@@ -31,3 +31,7 @@ next-env.d.ts
 # editor / tooling
 .zcode/
 opencode.json
+
+# cloudflare / opennext
+.open-next/
+.wrangler/

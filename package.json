@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build:worker": "opennextjs-cloudflare build",
+    "preview:worker": "opennextjs-cloudflare build && wrangler dev",
+    "deploy:worker": "opennextjs-cloudflare build && wrangler deploy"
   },
   "dependencies": {
     "@hugeicons/core-free-icons": "^4.3.5",
@@ -30,6 +33,7 @@
     "sanity": "^4.22.1"
   },
   "devDependencies": {
+    "@opennextjs/cloudflare": "^1.20.15",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^20.19.8",
     "@types/react": "^19.1.8",
@@ -37,6 +41,7 @@
     "eslint": "^9.31.0",
     "eslint-config-next": "^15.4.2",
     "tailwindcss": "^4.1.11",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "wrangler": "^4.156.0"
   }
 }
