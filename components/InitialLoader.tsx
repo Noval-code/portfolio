@@ -64,6 +64,7 @@ export default function InitialLoader({
           label={label}
           doneLabel={doneLabel}
           glyph="sparkle"
+          shimmer={false}
           fontSize={16}
           breathPeriod={1.6}
           breathDepth={0.45}

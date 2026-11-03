@@ -34,9 +34,14 @@ const content = {
       "Full-Stack Developer & Systems Architect. Specializing in Web Platforms and Automation systems.",
     aboutKicker: "About",
     aboutTitle:
-      "I’m a full-stack developer focused on building production-ready web experiences that feel fast, look polished, and scale with real product needs.",
-    aboutBody:
-      "From interface design to backend systems, I help turn ideas into products that are smooth for users and stable for business operations. I care about performance, maintainability, and decisions that improve the experience long after launch.",
+      "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.",
+    aboutBody: [
+      "I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
+      "I'm experienced in developing both frontend and backend applications using technologies such as **React.js, Next.js, TypeScript, Golang, Express.js, and PostgreSQL**. For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.",
+      "Most recently, I worked on developing an information system at **CV Nutrisi Citra Nusantara**, integrating modern web technologies with an AI-powered chatbot using Retrieval-Augmented Generation (RAG) and Machine Learning with Random Forest to help predict raw material requirements.",
+      "Outside of development, I enjoy exploring new technologies, building personal projects, and continuously improving my software engineering skills. I'm always eager to learn, solve challenging problems, and create digital products that bring real value.",
+      "I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
+    ],
     workKicker: "Selected Work",
     workTitle: "Designed to move products forward",
     finalKicker: "Next",
@@ -100,9 +105,14 @@ const content = {
       "Full-Stack Developer & Systems Architect. Spesialisasi di platform web dan sistem otomatisasi.",
     aboutKicker: "Tentang",
     aboutTitle:
-      "Saya adalah full-stack developer yang fokus membangun pengalaman web production-ready yang terasa cepat, terlihat rapi, dan siap tumbuh sesuai kebutuhan produk.",
-    aboutBody:
-      "Dari desain antarmuka hingga sistem backend, saya membantu mengubah ide menjadi produk yang lancar untuk pengguna dan stabil untuk operasional bisnis. Saya peduli pada performa, maintainability, dan keputusan yang memperbaiki pengalaman dalam jangka panjang.",
+      "Hai! Aku Muhammad Noval Aula, seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
+    aboutBody: [
+      "Aku senang membangun aplikasi web yang tidak hanya menarik secara visual, tetapi juga fungsional, scalable, dan mampu menjawab kebutuhan nyata.",
+      "Aku terbiasa mengembangkan aplikasi dari sisi frontend hingga backend menggunakan berbagai teknologi seperti **React.js, Next.js, TypeScript, Golang, Express.js, dan PostgreSQL**. Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan menciptakan solusi melalui teknologi.",
+      "Pengalaman terakhirku adalah mengembangkan sistem informasi di **CV Nutrisi Citra Nusantara**, dengan mengintegrasikan teknologi web, AI Chatbot berbasis Retrieval-Augmented Generation (RAG), serta Machine Learning menggunakan Random Forest untuk membantu memprediksi kebutuhan bahan baku.",
+      "Di luar pekerjaan, aku senang mengeksplorasi teknologi baru, mengembangkan personal project, dan terus meningkatkan kemampuan dalam software engineering. Aku selalu tertarik untuk mempelajari hal baru, memecahkan masalah, dan membangun produk digital yang memberikan dampak nyata.",
+      "Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Feel free to reach out! 🚀",
+    ],
     workKicker: "Karya Pilihan",
     workTitle: "Dirancang untuk mendorong produk maju",
     finalKicker: "Lanjut",
@@ -628,7 +638,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             spread={105}
             yoyo
             delay={0.6}
-            disabled
           />
           <ShinyText
             text="DEVELOPER"
@@ -640,7 +649,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             yoyo
             direction="right"
             delay={0.2}
-            disabled
           />
         </div>
         <div className="hero-copy-panel hero-copy-right">
@@ -686,7 +694,21 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
               {copy.aboutTitle}
             </ScrollReveal>
             <div className="intro-columns">
-              <p className="reveal">{copy.aboutBody}</p>
+              {Array.isArray(copy.aboutBody)
+                ? copy.aboutBody.map((paragraph, index) => (
+                    <p className="reveal" key={index}>
+                      {paragraph.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+                        part.startsWith("**") && part.endsWith("**") ? (
+                          <strong key={i}>{part.slice(2, -2)}</strong>
+                        ) : (
+                          part
+                        )
+                      )}
+                    </p>
+                  ))
+                : (
+                    <p className="reveal">{copy.aboutBody}</p>
+                  )}
             </div>
           </div>
           <div className="about-avatar-card reveal" aria-hidden="true">
