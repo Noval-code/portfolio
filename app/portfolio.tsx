@@ -18,7 +18,6 @@ import {
   Globe,
   Workflow,
 } from "lucide-react";
-import ScrollReveal from "../components/ScrollReveal";
 import BlogCard from "../components/BlogCard";
 import ProjectsSection from "../components/portfolio/ProjectsSection";
 import ExperienceSection from "../components/portfolio/ExperienceSection";
@@ -36,11 +35,10 @@ const content = {
     aboutTitle:
       "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.",
     aboutBody: [
-      "I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
-      "I'm experienced in developing both frontend and backend applications using technologies such as **React.js, Next.js, TypeScript, Golang, Express.js, and PostgreSQL**. For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.",
-      "Most recently, I worked on developing an information system at **CV Nutrisi Citra Nusantara**, integrating modern web technologies with an AI-powered chatbot using Retrieval-Augmented Generation (RAG) and Machine Learning with Random Forest to help predict raw material requirements.",
+      "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
+      "Most recently, I worked on developing an information system at CV Nutrisi Citra Nusantara, integrating modern web technologies with an AI-powered chatbot using Retrieval-Augmented Generation (RAG) and Machine Learning with Random Forest to help predict raw material requirements.",
       "Outside of development, I enjoy exploring new technologies, building personal projects, and continuously improving my software engineering skills. I'm always eager to learn, solve challenging problems, and create digital products that bring real value.",
-      "I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
+      "For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
     ],
     workKicker: "Selected Work",
     workTitle: "Designed to move products forward",
@@ -683,16 +681,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         <div className="intro-layout">
           <div className="intro-content">
             <p className="section-kicker reveal">{copy.aboutKicker}</p>
-            <ScrollReveal
-              baseOpacity={0}
-              enableBlur
-              baseRotation={5}
-              blurStrength={10}
-              containerClassName="about-scroll-reveal"
-              textClassName="about-scroll-text"
-            >
-              {copy.aboutTitle}
-            </ScrollReveal>
             <div className="intro-columns">
               {Array.isArray(copy.aboutBody)
                 ? copy.aboutBody.map((paragraph, index) => (

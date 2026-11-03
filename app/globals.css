@@ -769,6 +769,10 @@ h1 {
   line-height: 1.7;
 }
 
+.intro-columns p {
+  font-size: 1.3rem;
+}
+
 .projects-pin {
   position: relative;
   padding: 64px 0 40px;
