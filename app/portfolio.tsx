@@ -628,6 +628,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             spread={105}
             yoyo
             delay={0.6}
+            disabled
           />
           <ShinyText
             text="DEVELOPER"
@@ -639,6 +640,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             yoyo
             direction="right"
             delay={0.2}
+            disabled
           />
         </div>
         <div className="hero-copy-panel hero-copy-right">
@@ -872,23 +874,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         )}
       </AnimatePresence>
 
-      <section className="section process">
-        <div className="process-card reveal">
-          <span>01</span>
-          <h3>{copy.process[0][0]}</h3>
-          <p>{copy.process[0][1]}</p>
-        </div>
-        <div className="process-card reveal">
-          <span>02</span>
-          <h3>{copy.process[1][0]}</h3>
-          <p>{copy.process[1][1]}</p>
-        </div>
-        <div className="process-card reveal">
-          <span>03</span>
-          <h3>{copy.process[2][0]}</h3>
-          <p>{copy.process[2][1]}</p>
-        </div>
-      </section>
 
       <section id="blog" className="section blog">
         <div className="blog-heading reveal">
