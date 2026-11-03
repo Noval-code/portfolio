@@ -1918,3 +1918,134 @@ h1 {
   width: 100%;
   height: auto;
 }
+
+/* ---------- Mobile responsive ---------- */
+@media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .nav {
+    top: 14px;
+    grid-template-columns: 1fr auto auto;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-menu-toggle {
+    display: inline-flex;
+  }
+
+  .nav-control {
+    min-height: 32px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    top: 70px;
+    width: calc(100% - 32px);
+    opacity: 0;
+    transform: translateX(-50%) translateY(-28px);
+    pointer-events: none;
+    transition: opacity 260ms ease, transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  /* hamburger -> X */
+  .nav-menu-bar {
+    transition: transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 200ms ease;
+  }
+
+  body.menu-open .nav-menu-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  body.menu-open .nav-menu-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  body.menu-open .nav-menu-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* About section */
+  .section {
+    padding: 56px 0;
+  }
+
+  .intro-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .about-avatar-card {
+    justify-self: center;
+    width: min(300px, 86vw);
+    max-width: 320px;
+  }
+
+  .about-scroll-reveal {
+    max-width: 100%;
+  }
+
+  .intro-columns {
+    margin-top: 22px;
+  }
+
+  /* Selected projects */
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    min-height: auto;
+    padding: 16px;
+    border-radius: 24px;
+  }
+
+  .project-card .mockup {
+    height: 220px;
+    min-height: 220px;
+    margin: 0;
+  }
+
+  .scroll-stack-card {
+    width: min(94vw, 1100px);
+  }
+
+  .project-card h3 {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+  }
+
+  .project-links,
+  .project-stack,
+  .project-clients ul {
+    gap: 8px;
+  }
+
+  .project-link {
+    padding: 8px 14px;
+    font-size: 0.75rem;
+  }
+
+  /* Hero adjustments */
+  .hero-copy-right {
+    width: calc(100vw - 32px);
+    max-width: none;
+  }
+
+  .hero-copy-right p {
+    font-size: 0.9rem;
+  }
+}

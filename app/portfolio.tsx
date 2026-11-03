@@ -555,6 +555,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
           >
             <span className="nav-menu-bar" />
             <span className="nav-menu-bar" />
+            <span className="nav-menu-bar" />
           </button>
         </div>
       </nav>
