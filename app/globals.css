@@ -1928,8 +1928,25 @@ h1 {
   .nav {
     top: 14px;
     grid-template-columns: 1fr auto auto;
-    gap: 8px;
-    padding: 10px 12px;
+    gap: 6px;
+    padding: 8px 10px;
+    width: min(1120px, calc(100% - 24px));
+  }
+
+  .brand {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+  }
+
+  .nav-control {
+    min-height: 30px;
+    padding: 0 8px;
+    font-size: 0.7rem;
+  }
+
+  .nav-menu-toggle {
+    width: 34px;
+    min-height: 30px;
   }
 
   .nav-links {
@@ -2051,11 +2068,11 @@ h1 {
 
   /* Hero mobile: geser gambar dan teks ke atas */
   .hero-portrait {
-    bottom: 8svh;
+    bottom: 13svh;
   }
 
   .hero-shiny-title {
-    top: 42%;
+    top: 37%;
   }
 
   /* Projects mobile list (no ScrollStack pinning) */
