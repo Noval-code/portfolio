@@ -92,6 +92,11 @@ main {
   font-size: 0.76rem;
 }
 
+.nav-compact .brand-logo {
+  width: 28px;
+  height: 28px;
+}
+
 .nav-compact .nav-links a {
   padding: 7px 10px;
   font-size: 0.76rem;
@@ -102,7 +107,23 @@ main {
   font-size: 0.85rem;
   font-weight: 700;
   letter-spacing: 0.16em;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   transition: font-size 360ms ease;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+  border-radius: 50%;
+  transition: transform 300ms ease, width 360ms ease, height 360ms ease;
+}
+
+.brand:hover .brand-logo {
+  transform: scale(1.08);
 }
 
 .nav-links {
@@ -625,13 +646,97 @@ h1 {
   color: var(--muted);
 }
 
-.intro h2,
-.contact h2 {
+.intro h2 {
   max-width: 960px;
   font-family: var(--font-display), sans-serif;
   font-size: clamp(2.3rem, 6vw, 5.8rem);
   letter-spacing: -0.07em;
   line-height: 0.95;
+}
+
+/* Contact Section - ReflectiveCard */
+.contact {
+  padding-bottom: 120px;
+}
+
+.contact-rc-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Force ReflectiveCard to full width */
+.contact-rc-wrapper > div {
+  width: 100% !important;
+}
+
+/* Content inside ReflectiveCard */
+.contact-rc-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: clamp(24px, 5vw, 56px);
+  gap: 0;
+}
+
+.contact-rc-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  color: #ffffff;
+  margin: 0 0 18px;
+  max-width: 700px;
+}
+
+.contact-rc-body {
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+  line-height: 1.7;
+  color: rgba(244, 244, 245, 0.65);
+  margin: 0 0 36px;
+  max-width: 520px;
+}
+
+.contact-rc-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact-rc-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(244, 244, 245, 0.85);
+  text-decoration: none;
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-rc-link svg {
+  flex-shrink: 0;
+  transition: transform 250ms ease;
+}
+
+.contact-rc-link:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-rc-link:hover svg {
+  transform: scale(1.15);
 }
 
 .skills .experience-heading {
@@ -756,7 +861,7 @@ h1 {
 .intro-columns {
   display: grid;
   max-width: 680px;
-  gap: 18px;
+  gap: 8px;
   margin-top: 34px;
 }
 
@@ -771,6 +876,32 @@ h1 {
 
 .intro-columns p {
   font-size: 1.3rem;
+}
+
+/* About kicker: WHO AM I? — override section-kicker size untuk shiny label */
+.about-kicker-shiny {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  color: transparent; /* warna dari ShinyText */
+}
+
+/* About paragraf ScrollReveal — heading h2 jadi paragraf feel */
+.about-para-reveal {
+  margin: 0;
+  max-width: 680px;
+  transform-origin: left center;
+}
+
+.scroll-reveal-text.about-para-text {
+  color: rgba(245, 247, 251, 0.95);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
 }
 
 .projects-pin {
@@ -1099,13 +1230,12 @@ h1 {
 .experience-work-history {
   display: inline-block;
   width: fit-content;
-  margin-top: 14px;
-  font-size: clamp(0.92rem, 1.2vw, 1.06rem);
+  font-size: 1.8rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  line-height: 1;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
   text-transform: uppercase;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .experience-title {
@@ -1326,6 +1456,7 @@ h1 {
 
 .certificates-heading .experience-work-history {
   margin-top: 0;
+  margin-bottom: 12px;
 }
 
 .certificates-sub {
@@ -1642,6 +1773,10 @@ h1 {
   margin-bottom: 36px;
 }
 
+.blog-heading .experience-work-history {
+  margin-bottom: 12px;
+}
+
 .blog-heading h2 {
   max-width: 720px;
   margin: 0;
@@ -1942,6 +2077,11 @@ h1 {
     letter-spacing: 0.12em;
   }
 
+  .brand-logo {
+    width: 28px;
+    height: 28px;
+  }
+
   .nav-control {
     min-height: 30px;
     padding: 0 8px;
@@ -2118,5 +2258,27 @@ h1 {
 
   .article-header h1 {
     font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  /* Contact section mobile */
+  .contact {
+    padding-bottom: 72px;
+  }
+
+  .contact-rc-wrapper > div {
+    height: 480px !important;
+  }
+
+  .contact-rc-title {
+    font-size: 1.8rem;
+  }
+
+  .contact-rc-socials {
+    gap: 12px;
+  }
+
+  .contact-rc-link {
+    width: 44px;
+    height: 44px;
   }
 }

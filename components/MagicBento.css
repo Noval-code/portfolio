@@ -34,7 +34,8 @@
   background: var(--background-dark);
   font-weight: 300;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  touch-action: pan-y;
 
   --glow-x: 50%;
   --glow-y: 50%;
@@ -42,7 +43,8 @@
   --glow-radius: 200px;
 }
 
-.magic-bento-card:hover {
+.magic-bento-card:hover,
+.magic-bento-card--touched {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -262,11 +264,13 @@
   z-index: 1;
 }
 
-.magic-bento-card--border-glow:hover::after {
+.magic-bento-card--border-glow:hover::after,
+.magic-bento-card--border-glow.magic-bento-card--touched::after {
   opacity: 1;
 }
 
-.magic-bento-card--border-glow:hover {
+.magic-bento-card--border-glow:hover,
+.magic-bento-card--border-glow.magic-bento-card--touched {
   box-shadow:
     0 4px 20px rgba(180, 185, 192, 0.25),
     0 0 30px var(--silver-glow);
@@ -289,7 +293,8 @@
   z-index: -1;
 }
 
-.particle-container:hover {
+.particle-container:hover,
+.particle-container.magic-bento-card--touched {
   box-shadow:
     0 4px 20px rgba(180, 185, 192, 0.15),
     0 0 30px var(--silver-glow);

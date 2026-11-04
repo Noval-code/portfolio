@@ -10,6 +10,13 @@ export const metadata: Metadata = {
   title: "Muhammad Noval Aula — Full-Stack Developer",
   description:
     "Portfolio of Muhammad Noval Aula, a full-stack developer building fast, polished, and reliable web products with React, Next.js, and Node.js.",
+  icons: {
+    icon: [
+      { url: "/Logo-svg.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/Logo-svg.svg",
+    apple: "/Logo-svg.svg",
+  },
   keywords: [
     "Muhammad Noval Aula",
     "Full-Stack Developer",

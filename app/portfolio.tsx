@@ -19,6 +19,8 @@ import {
   Workflow,
 } from "lucide-react";
 import BlogCard from "../components/BlogCard";
+import ScrollReveal from "../components/ScrollReveal";
+import ReflectiveCard from "../components/ReflectiveCard";
 import ProjectsSection from "../components/portfolio/ProjectsSection";
 import ExperienceSection from "../components/portfolio/ExperienceSection";
 import type { PostMeta } from "../lib/blog";
@@ -26,12 +28,12 @@ import type { PortfolioCms } from "../lib/sanity/projects";
 
 const content = {
   en: {
-    nav: { work: "Work", skills: "Skills", certs: "Certs", blog: "Blog", contact: "Contact", lang: "EN" },
+    nav: { about: "About", work: "Work", experience: "Experience", skills: "Skills", certs: "Certs", blog: "Blog", contact: "Contact", lang: "EN" },
     heroViewWork: "View Work",
     heroDownloadCv: "Download CV",
     heroSubtext:
       "Full-Stack Developer & Systems Architect. Specializing in Web Platforms and Automation systems.",
-    aboutKicker: "About",
+    aboutKicker: "WHO AM I?",
     aboutTitle:
       "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.",
     aboutBody: [
@@ -58,7 +60,8 @@ const content = {
       ["Ship the product", "Bring UI, motion, performance, and deployment together into a clean release."],
     ],
     contactKicker: "Contact",
-    contactTitle: "Need someone who can make the interface feel sharp and the system behind it work?",
+    contactTitle: "Have a project you'd like to build?",
+    contactBody: "Tell us about your needs. We'll start by defining your goals and identifying the most sensible solutions.",
     contactCta: "Let's build it",
     blogKicker: "Blog",
     blogTitle: "Notes on building for the web.",
@@ -96,12 +99,12 @@ const content = {
     ],
   },
   id: {
-    nav: { work: "Karya", skills: "Skill", certs: "Sertifikat", blog: "Blog", contact: "Kontak", lang: "ID" },
+    nav: { about: "Tentang", work: "Karya", experience: "Pengalaman", skills: "Skill", certs: "Sertifikat", blog: "Blog", contact: "Kontak", lang: "ID" },
     heroViewWork: "Lihat Karya",
     heroDownloadCv: "Unduh CV",
     heroSubtext:
       "Full-Stack Developer & Systems Architect. Spesialisasi di platform web dan sistem otomatisasi.",
-    aboutKicker: "Tentang",
+    aboutKicker: "WHO AM I?",
     aboutTitle:
       "Hai! Aku Muhammad Noval Aula, seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
     aboutBody: [
@@ -129,7 +132,8 @@ const content = {
       ["Ship produk", "Satukan UI, motion, performa, dan deployment menjadi release yang rapi."],
     ],
     contactKicker: "Kontak",
-    contactTitle: "Butuh orang yang bisa membuat interface terasa sharp dan sistem di belakangnya berjalan?",
+    contactTitle: "Have a project you'd like to build?",
+    contactBody: "Tell us about your needs. We'll start by defining your goals and identifying the most sensible solutions.",
     contactCta: "Mari bangun",
     blogKicker: "Blog",
     blogTitle: "Catatan membangun untuk web.",
@@ -536,9 +540,20 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
     <main ref={root}>
       <div className="progress-line" />
       <nav className="nav">
-        <a href="#top" className="brand">DEV.PORT</a>
+        <a href="#top" className="brand" aria-label="Noval Portfolio">
+          <Image
+            src="/Logo.png"
+            alt="Noval Logo"
+            width={36}
+            height={36}
+            className="brand-logo"
+            priority
+          />
+        </a>
         <div className="nav-links">
+          <a href="#about">{navLabels.about}</a>
           <a href="#work">{navLabels.work}</a>
+          <a href="#experience">{navLabels.experience}</a>
           <a href="#skills">{navLabels.skills}</a>
           <a href="#certificates">{navLabels.certs}</a>
           <Link href="/blog">{navLabels.blog}</Link>
@@ -569,10 +584,22 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       </nav>
       <div id="mobile-menu" className={`mobile-menu ${isMenuOpen ? "is-open" : ""}`}>
         <a
+          href="#about"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {navLabels.about}
+        </a>
+        <a
           href="#work"
           onClick={() => setIsMenuOpen(false)}
         >
           {navLabels.work}
+        </a>
+        <a
+          href="#experience"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {navLabels.experience}
         </a>
         <a
           href="#skills"
@@ -677,25 +704,44 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         </div>
       </section>
 
-      <section className="section intro">
+      <section id="about" className="section intro">
         <div className="intro-layout">
           <div className="intro-content">
-            <p className="section-kicker reveal">{copy.aboutKicker}</p>
+            <p className="section-kicker about-kicker-shiny reveal">
+              <ShinyText
+                text={copy.aboutKicker}
+                speed={3}
+                color="rgba(245,247,251,0.72)"
+                shineColor="#ffffff"
+                spread={100}
+              />
+            </p>
             <div className="intro-columns">
               {Array.isArray(copy.aboutBody)
                 ? copy.aboutBody.map((paragraph, index) => (
-                    <p className="reveal" key={index}>
-                      {paragraph.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
-                        part.startsWith("**") && part.endsWith("**") ? (
-                          <strong key={i}>{part.slice(2, -2)}</strong>
-                        ) : (
-                          part
-                        )
-                      )}
-                    </p>
+                    <ScrollReveal
+                      key={index}
+                      enableBlur={true}
+                      baseOpacity={0.08}
+                      blurStrength={5}
+                      baseRotation={2}
+                      containerClassName="about-para-reveal"
+                      textClassName="about-para-text"
+                    >
+                      {paragraph.replace(/\*\*([^*]+)\*\*/g, "$1")}
+                    </ScrollReveal>
                   ))
                 : (
-                    <p className="reveal">{copy.aboutBody}</p>
+                    <ScrollReveal
+                      enableBlur={true}
+                      baseOpacity={0.08}
+                      blurStrength={5}
+                      baseRotation={2}
+                      containerClassName="about-para-reveal"
+                      textClassName="about-para-text"
+                    >
+                      {typeof copy.aboutBody === "string" ? copy.aboutBody : ""}
+                    </ScrollReveal>
                   )}
             </div>
           </div>
@@ -766,7 +812,6 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
               delay={0.3}
             />
             <h2 className="experience-title certificates-title">{copy.certificatesTitle}</h2>
-            <p className="certificates-sub">{copy.certificatesSub}</p>
           </div>
           <div className="cert-controls">
             <button type="button" className="view-btn cert-btn" aria-label="Scroll certificates left" onClick={() => scrollCerts(-1)}>
@@ -888,9 +933,17 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       <section id="blog" className="section blog">
         <div className="blog-heading reveal">
           <div>
-            <p className="section-kicker">{copy.blogKicker}</p>
+            <ShinyText
+              text={copy.blogKicker}
+              className="experience-work-history"
+              speed={4.5}
+              color="rgba(176, 182, 191, 0.72)"
+              shineColor="rgba(255, 255, 255, 0.95)"
+              spread={88}
+              yoyo
+              delay={0.3}
+            />
             <h2>{copy.blogTitle}</h2>
-            <p className="blog-sub">{copy.blogSub}</p>
           </div>
         </div>
         <div className="blog-grid">
@@ -910,9 +963,74 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       </section>
 
       <section id="contact" className="section contact">
-        <p className="section-kicker reveal">{copy.contactKicker}</p>
-        <h2 className="reveal">{copy.contactTitle}</h2>
-        <a className="contact-link reveal" href="mailto:novalaula486@gmail.com">{copy.contactCta}</a>
+        <div className="contact-rc-wrapper reveal">
+          <ReflectiveCard
+            theme="dark"
+            tint="#ffffff"
+            metalness={1}
+            roughness={0.3}
+            blurStrength={6}
+            shine={1}
+            glare={0.5}
+            width="100%"
+            height={420}
+            radius={32}
+          >
+            <div className="contact-rc-content">
+              <h2 className="contact-rc-title">{copy.contactTitle}</h2>
+              <p className="contact-rc-body">{copy.contactBody}</p>
+              <div className="contact-rc-socials">
+                <a
+                  href="mailto:novalaula486@gmail.com"
+                  className="contact-rc-link"
+                  aria-label="Email"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3" />
+                    <path d="m2 7 10 7 10-7" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/nvlaula"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-rc-link"
+                  aria-label="Instagram"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="4.5" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/nvlaula"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-rc-link"
+                  aria-label="LinkedIn"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect x="2" y="9" width="4" height="12" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.threads.net/@nvlaula"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-rc-link"
+                  aria-label="Threads"
+                >
+                  <svg width="20" height="20" viewBox="0 0 192 192" fill="currentColor" stroke="none">
+                    <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </ReflectiveCard>
+        </div>
       </section>
     </main>
   );
