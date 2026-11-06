@@ -719,7 +719,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
               {Array.isArray(copy.aboutBody)
                 ? copy.aboutBody.map((paragraph, index) => (
                     <ScrollReveal
-                      key={index}
+                      key={`${language}-${index}`}
                       enableBlur={true}
                       baseOpacity={0.08}
                       blurStrength={5}
