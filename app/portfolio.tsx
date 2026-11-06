@@ -108,11 +108,10 @@ const content = {
     aboutTitle:
       "Hai! Aku Muhammad Noval Aula, seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
     aboutBody: [
-      "Aku senang membangun aplikasi web yang tidak hanya menarik secara visual, tetapi juga fungsional, scalable, dan mampu menjawab kebutuhan nyata.",
-      "Aku terbiasa mengembangkan aplikasi dari sisi frontend hingga backend menggunakan berbagai teknologi seperti **React.js, Next.js, TypeScript, Golang, Express.js, dan PostgreSQL**. Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan menciptakan solusi melalui teknologi.",
-      "Pengalaman terakhirku adalah mengembangkan sistem informasi di **CV Nutrisi Citra Nusantara**, dengan mengintegrasikan teknologi web, AI Chatbot berbasis Retrieval-Augmented Generation (RAG), serta Machine Learning menggunakan Random Forest untuk membantu memprediksi kebutuhan bahan baku.",
-      "Di luar pekerjaan, aku senang mengeksplorasi teknologi baru, mengembangkan personal project, dan terus meningkatkan kemampuan dalam software engineering. Aku selalu tertarik untuk mempelajari hal baru, memecahkan masalah, dan membangun produk digital yang memberikan dampak nyata.",
-      "Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Feel free to reach out! 🚀",
+      "Hai! Aku Muhammad Noval Aula, seorang Full-Stack Developer dengan pengalaman 4 tahun di bidang web development. Aku senang membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga fungsional, scalable, dan dirancang untuk menyelesaikan masalah nyata.",
+      "Belakangan ini, aku mengembangkan sistem informasi di CV Nutrisi Citra Nusantara, dengan mengintegrasikan teknologi web modern, AI chatbot berbasis Retrieval-Augmented Generation (RAG), serta Machine Learning menggunakan Random Forest untuk membantu memprediksi kebutuhan bahan baku.",
+      "Di luar pengembangan, aku senang mengeksplorasi teknologi baru, membangun personal project, dan terus meningkatkan kemampuan software engineering. Aku selalu bersemangat untuk belajar, memecahkan masalah yang menantang, dan menciptakan produk digital yang memberikan nilai nyata.",
+      "Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan mengubah ide menjadi solusi yang bermakna melalui teknologi. Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Jangan ragu untuk menghubungi! 🚀",
     ],
     workKicker: "Karya Pilihan",
     workTitle: "Dirancang untuk mendorong produk maju",
