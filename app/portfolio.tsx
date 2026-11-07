@@ -175,12 +175,12 @@ const skillGroups = [
   {
     id: "frontend",
     label: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue", "Angular", "GSAP", "Tailwind"],
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue", "Angular", "Svelte", "GSAP", "Tailwind"],
   },
   {
     id: "backend",
     label: "Backend",
-    items: ["Golang", "Node.js", "PHP", "Laravel", "Express.js", "Python", "Flask"],
+    items: ["Golang", "Node.js", "Bun", "PHP", "Laravel", "Express.js", "Python", "Flask"],
   },
   {
     id: "ml",
@@ -195,7 +195,7 @@ const skillGroups = [
   {
     id: "tools",
     label: "Tools",
-    items: ["Git", "GitLab", "Docker", "Postman", "Figma", "Automa", "n8n"],
+    items: ["Git", "GitLab", "Docker", "Postman", "Figma", "WordPress", "Automa", "n8n"],
   },
 ];
 
@@ -207,6 +207,7 @@ const bentoCardOrder = ["frontend", "database", "backend", "ml", "tools"];
 const backendIcons: Record<string, string> = {
   "Golang": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
   "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  "Bun": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bun/bun-original.svg",
   "PHP": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   "Laravel": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
   "Express.js": "https://cdn.simpleicons.org/express/D4D7DC",
@@ -229,6 +230,7 @@ const frontendIcons: Record<string, string> = {
   "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   "Vue": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
   "Angular": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
+  "Svelte": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg",
   "GSAP": "https://cdn.simpleicons.org/gsap/D4D7DC",
   "Tailwind": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
 };
@@ -249,6 +251,7 @@ const toolsIcons: Record<string, string | React.ReactNode> = {
   "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   "Postman": "https://cdn.simpleicons.org/postman/D4D7DC",
   "Figma": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  "WordPress": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg",
   "Automa": <Workflow size={14} />,
   "n8n": "https://cdn.simpleicons.org/n8n/D4D7DC",
 };
