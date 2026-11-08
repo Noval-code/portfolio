@@ -1001,7 +1001,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
                   </svg>
                 </a>
                 <a
-                  href="https://www.instagram.com/nvlaula"
+                  href="https://www.instagram.com/palls___/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-rc-link"
@@ -1014,7 +1014,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
                   </svg>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/nvlaula"
+                  href="https://www.linkedin.com/in/muhammadnovalaula/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contact-rc-link"
