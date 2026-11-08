@@ -73,20 +73,6 @@ const content = {
     experience: [
       {
         role: "Fullstack Developer",
-        company: "PT Kampung Marketerindo Berdaya (Komerce)",
-        period: "Jul 2025 — Nov 2025",
-        points: [
-          "Contributed to the development and maintenance of Komship by enhancing three core modules: Shipment Tracking, Bulk Order, and Shipping Analytics.",
-          "Implemented shipment tracking features using Go and shipping API integrations, enabling the retrieval, processing, and display of shipment status information.",
-          "Developed and enhanced bulk order validation and processing workflows, handling multiple order entries to support more efficient shipment management.",
-          "Implemented shipping analytics features to process and present courier performance, shipment statistics, and delivery reports for operational monitoring.",
-          "Integrated frontend interfaces built with Next.js with backend services and PostgreSQL databases to ensure consistent data processing and application functionality.",
-          "Performed debugging, API integration, and feature maintenance to improve existing application functionality and system reliability.",
-        ],
-        stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
-      },
-      {
-        role: "Fullstack Developer",
         company: "Freelance",
         period: "Nov 2023 — Present",
         points: [
@@ -99,6 +85,20 @@ const content = {
           "Collaborated with cross-functional teams to translate business requirements into technical solutions and deliver project features within established timelines.",
         ],
         stack: ["Next.js", "React", "Node.js", "REST API", "PostgreSQL", "MySQL"],
+      },
+      {
+        role: "Fullstack Developer",
+        company: "PT Kampung Marketerindo Berdaya (Komerce)",
+        period: "Jul 2025 — Nov 2025",
+        points: [
+          "Contributed to the development and maintenance of Komship by enhancing three core modules: Shipment Tracking, Bulk Order, and Shipping Analytics.",
+          "Implemented shipment tracking features using Go and shipping API integrations, enabling the retrieval, processing, and display of shipment status information.",
+          "Developed and enhanced bulk order validation and processing workflows, handling multiple order entries to support more efficient shipment management.",
+          "Implemented shipping analytics features to process and present courier performance, shipment statistics, and delivery reports for operational monitoring.",
+          "Integrated frontend interfaces built with Next.js with backend services and PostgreSQL databases to ensure consistent data processing and application functionality.",
+          "Performed debugging, API integration, and feature maintenance to improve existing application functionality and system reliability.",
+        ],
+        stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
       },
     ],
   },
@@ -148,20 +148,6 @@ const content = {
     experience: [
       {
         role: "Fullstack Developer",
-        company: "PT Kampung Marketerindo Berdaya (Komerce)",
-        period: "Jul 2025 — Nov 2025",
-        points: [
-          "Berkontribusi dalam pengembangan dan pemeliharaan Komship melalui peningkatan 3 modul utama, yaitu Shipment Tracking, Bulk Order, dan Shipping Analytics.",
-          "Mengembangkan fitur pelacakan pengiriman menggunakan Go dan integrasi API ekspedisi untuk mengambil, memproses, dan menampilkan status pengiriman.",
-          "Mengembangkan alur validasi dan pemrosesan Bulk Order untuk menangani banyak pesanan sekaligus dan mempermudah pengelolaan pengiriman.",
-          "Mengembangkan fitur Shipping Analytics untuk mengolah dan menyajikan performa ekspedisi, statistik pengiriman, serta laporan pengantaran.",
-          "Mengintegrasikan antarmuka frontend menggunakan Next.js dengan layanan backend dan basis data PostgreSQL untuk memastikan konsistensi data aplikasi.",
-          "Melakukan debugging, integrasi API, dan pemeliharaan fitur untuk meningkatkan fungsionalitas serta keandalan sistem.",
-        ],
-        stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
-      },
-      {
-        role: "Fullstack Developer",
         company: "Freelance",
         period: "Nov 2023 — Sekarang",
         points: [
@@ -174,6 +160,20 @@ const content = {
           "Berkolaborasi dengan berbagai tim untuk menerjemahkan kebutuhan bisnis menjadi solusi teknis dan menyelesaikan fitur sesuai tenggat waktu.",
         ],
         stack: ["Next.js", "React", "Node.js", "REST API", "PostgreSQL", "MySQL"],
+      },
+      {
+        role: "Fullstack Developer",
+        company: "PT Kampung Marketerindo Berdaya (Komerce)",
+        period: "Jul 2025 — Nov 2025",
+        points: [
+          "Berkontribusi dalam pengembangan dan pemeliharaan Komship melalui peningkatan 3 modul utama, yaitu Shipment Tracking, Bulk Order, dan Shipping Analytics.",
+          "Mengembangkan fitur pelacakan pengiriman menggunakan Go dan integrasi API ekspedisi untuk mengambil, memproses, dan menampilkan status pengiriman.",
+          "Mengembangkan alur validasi dan pemrosesan Bulk Order untuk menangani banyak pesanan sekaligus dan mempermudah pengelolaan pengiriman.",
+          "Mengembangkan fitur Shipping Analytics untuk mengolah dan menyajikan performa ekspedisi, statistik pengiriman, serta laporan pengantaran.",
+          "Mengintegrasikan antarmuka frontend menggunakan Next.js dengan layanan backend dan basis data PostgreSQL untuk memastikan konsistensi data aplikasi.",
+          "Melakukan debugging, integrasi API, dan pemeliharaan fitur untuk meningkatkan fungsionalitas serta keandalan sistem.",
+        ],
+        stack: ["Next.js", "Golang", "PostgreSQL", "Whatsmeow", "GitLab", "Docker"],
       },
     ],
   },
