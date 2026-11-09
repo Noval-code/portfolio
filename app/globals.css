@@ -904,6 +904,59 @@ h1 {
   text-wrap: pretty;
 }
 
+/* ---------- Education ---------- */
+.education-heading {
+  margin-bottom: 24px;
+}
+
+.education-title {
+  margin: 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(2.3rem, 4.8vw, 4.6rem);
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+}
+
+.education-title .shiny-text {
+  display: inline-block;
+}
+
+.education-card {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--panel);
+}
+
+.education-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+
+.education-school {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.education-period {
+  color: var(--accent-2);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.education-degree {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .projects-pin {
   position: relative;
   padding: 64px 0 40px;

@@ -42,6 +42,10 @@ const content = {
       "Outside of development, I enjoy exploring new technologies, building personal projects, and continuously improving my software engineering skills. I'm always eager to learn, solve challenging problems, and create digital products that bring real value.",
       "For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
     ],
+    educationTitle: "Education",
+    educationSchool: "Universitas Harkat Negeri",
+    educationDegree: "D4 — Informatics Engineering",
+    educationPeriod: "2022 — 2026",
     workKicker: "Selected Work",
     workTitle: "Designed to move products forward",
     finalKicker: "Next",
@@ -117,6 +121,10 @@ const content = {
       "Di luar pengembangan, aku senang mengeksplorasi teknologi baru, membangun personal project, dan terus meningkatkan kemampuan software engineering. Aku selalu bersemangat untuk belajar, memecahkan masalah yang menantang, dan menciptakan produk digital yang memberikan nilai nyata.",
       "Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan mengubah ide menjadi solusi yang bermakna melalui teknologi. Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Jangan ragu untuk menghubungi! 🚀",
     ],
+    educationTitle: "Pendidikan",
+    educationSchool: "Universitas Harkat Negeri",
+    educationDegree: "D4 — Teknik Informatika",
+    educationPeriod: "2022 — 2026",
     workKicker: "Karya Pilihan",
     workTitle: "Dirancang untuk mendorong produk maju",
     finalKicker: "Lanjut",
@@ -759,6 +767,28 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             <Image src="/about-avatar.webp" alt="" fill className="about-avatar-image" />
           </div>
         </div>
+      </section>
+
+      <section id="education" className="section education">
+        <div className="education-heading reveal">
+          <h2 className="education-title">
+            <ShinyText
+              text={copy.educationTitle}
+              speed={4.5}
+              color="rgba(245, 247, 251, 0.92)"
+              shineColor="#ffffff"
+              spread={88}
+              yoyo
+            />
+          </h2>
+        </div>
+        <article className="education-card reveal">
+          <div className="education-top">
+            <span className="education-school">{copy.educationSchool}</span>
+            <span className="education-period">{copy.educationPeriod}</span>
+          </div>
+          <p className="education-degree">{copy.educationDegree}</p>
+        </article>
       </section>
 
       <ProjectsSection
