@@ -771,16 +771,15 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
 
       <section id="education" className="section education">
         <div className="education-heading reveal">
-          <h2 className="education-title">
+          <p className="section-kicker about-kicker-shiny">
             <ShinyText
               text={copy.educationTitle}
-              speed={4.5}
-              color="rgba(245, 247, 251, 0.92)"
+              speed={3}
+              color="rgba(245, 247, 251, 0.72)"
               shineColor="#ffffff"
-              spread={88}
-              yoyo
+              spread={100}
             />
-          </h2>
+          </p>
         </div>
         <article className="education-card reveal">
           <div className="education-top">
