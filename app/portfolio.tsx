@@ -38,7 +38,7 @@ const content = {
       "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.",
     aboutBody: [
       "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
-      "Most recently, I worked on developing an information system at CV Nutrisi Citra Nusantara, integrating modern web technologies with an AI-powered chatbot using Retrieval-Augmented Generation (RAG) and Machine Learning with Random Forest to help predict raw material requirements.",
+      "Most recently, I developed a multi-tenant Point of Sales (POS) system with membership features for cafes. The system is currently running at Sekapa House, with planned rollouts at Depot Wahid and Sempati, covering transaction processing, product management, member registration, loyalty points, and sales reporting.",
       "Outside of development, I enjoy exploring new technologies, building personal projects, and continuously improving my software engineering skills. I'm always eager to learn, solve challenging problems, and create digital products that bring real value.",
       "For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
     ],
@@ -117,7 +117,7 @@ const content = {
       "Hai! Aku Muhammad Noval Aula, seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
     aboutBody: [
       "Hai! Aku Muhammad Noval Aula, seorang Full-Stack Developer dengan pengalaman 4 tahun di bidang web development. Aku senang membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga fungsional, scalable, dan dirancang untuk menyelesaikan masalah nyata.",
-      "Belakangan ini, aku mengembangkan sistem informasi di CV Nutrisi Citra Nusantara, dengan mengintegrasikan teknologi web modern, AI chatbot berbasis Retrieval-Augmented Generation (RAG), serta Machine Learning menggunakan Random Forest untuk membantu memprediksi kebutuhan bahan baku.",
+      "Belakangan ini, aku mengembangkan sistem Point of Sales (POS) multi-tenant dengan fitur membership untuk cafe. Sistem ini saat ini berjalan di Sekapa House, dengan rencana penerapan di Depot Wahid dan Sempati, mencakup pemrosesan transaksi, pengelolaan produk, pendaftaran member, poin loyalitas, dan laporan penjualan.",
       "Di luar pengembangan, aku senang mengeksplorasi teknologi baru, membangun personal project, dan terus meningkatkan kemampuan software engineering. Aku selalu bersemangat untuk belajar, memecahkan masalah yang menantang, dan menciptakan produk digital yang memberikan nilai nyata.",
       "Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan mengubah ide menjadi solusi yang bermakna melalui teknologi. Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Jangan ragu untuk menghubungi! 🚀",
     ],
