@@ -36,9 +36,9 @@ const content = {
       "Full-Stack Developer & Systems Architect. Specializing in Web Platforms and Automation systems.",
     aboutKicker: "WHO AM I?",
     aboutTitle:
-      "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.",
+      "Hi! I'm Muhammad Noval Aula, based in Slawi, Tegal — a Full-Stack Developer with 4 years of experience in web development.",
     aboutBody: [
-      "Hi! I'm Muhammad Noval Aula, a Full-Stack Developer with 4 years of experience in web development.I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
+      "Hi! I'm Muhammad Noval Aula, based in Slawi, Tegal — a Full-Stack Developer with 4 years of experience in web development. I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
       "Most recently, I developed a multi-tenant Point of Sales (POS) system with membership features for cafes. The system is currently running at Sekapa House, with planned rollouts at Depot Wahid and Sempati, covering transaction processing, product management, member registration, loyalty points, and sales reporting.",
       "Outside of development, I enjoy exploring new technologies, building personal projects, and continuously improving my software engineering skills. I'm always eager to learn, solve challenging problems, and create digital products that bring real value.",
       "For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
@@ -117,9 +117,9 @@ const content = {
       "Full-Stack Developer & Systems Architect. Spesialisasi di platform web dan sistem otomatisasi.",
     aboutKicker: "WHO AM I?",
     aboutTitle:
-      "Hai! Aku Muhammad Noval Aula, seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
+      "Hai! Aku Muhammad Noval Aula, berbasis di Slawi, Tegal — seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
     aboutBody: [
-      "Hai! Aku Muhammad Noval Aula, seorang Full-Stack Developer dengan pengalaman 4 tahun di bidang web development. Aku senang membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga fungsional, scalable, dan dirancang untuk menyelesaikan masalah nyata.",
+      "Hai! Aku Muhammad Noval Aula, berbasis di Slawi, Tegal — seorang Full-Stack Developer dengan pengalaman 4 tahun di bidang web development. Aku senang membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga fungsional, scalable, dan dirancang untuk menyelesaikan masalah nyata.",
       "Belakangan ini, aku mengembangkan sistem Point of Sales (POS) multi-tenant dengan fitur membership untuk cafe. Sistem ini saat ini berjalan di Sekapa House, dengan rencana penerapan di Depot Wahid dan Sempati, mencakup pemrosesan transaksi, pengelolaan produk, pendaftaran member, poin loyalitas, dan laporan penjualan.",
       "Di luar pengembangan, aku senang mengeksplorasi teknologi baru, membangun personal project, dan terus meningkatkan kemampuan software engineering. Aku selalu bersemangat untuk belajar, memecahkan masalah yang menantang, dan menciptakan produk digital yang memberikan nilai nyata.",
       "Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan mengubah ide menjadi solusi yang bermakna melalui teknologi. Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Jangan ragu untuk menghubungi! 🚀",
