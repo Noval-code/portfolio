@@ -11,6 +11,7 @@ import Ferrofluid from "../components/Ferrofluid";
 import ShinyText from "../components/ShinyText";
 import MagicBento, { type BentoCardData } from "../components/MagicBento";
 import StickerPeel from "../components/StickerPeel";
+import GithubProfile from "../components/GithubActivity";
 import {
   Brain,
   MessageSquareText,
@@ -52,6 +53,8 @@ const content = {
     finalTitle: "Show both sides of the build.",
     finalBody: "Each case study should explain the interface decisions, the backend architecture, and the tradeoffs behind the final product.",
     stackKicker: "Stack",
+    githubKicker: "GitHub",
+    githubTitle: "Activity",
     certificatesKicker: "Certificates",
     certificatesTitle: "Credentials that back up the craft.",
     certificatesSub: "Selected certifications across frontend, backend, and cloud — verified and up to date.",
@@ -131,6 +134,8 @@ const content = {
     finalTitle: "Tampilkan dua sisi dari proses build.",
     finalBody: "Setiap case study sebaiknya menjelaskan keputusan interface, arsitektur backend, dan tradeoff di balik produk akhirnya.",
     stackKicker: "Stack",
+    githubKicker: "GitHub",
+    githubTitle: "Aktivitas",
     certificatesKicker: "Sertifikat",
     certificatesTitle: "Kredensial yang mendukung keahlian.",
     certificatesSub: "Sertifikasi pilihan di bidang frontend, backend, dan cloud — terverifikasi dan terkini.",
@@ -833,6 +838,33 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             spotlightRadius={300}
             particleCount={10}
             glowColor="212, 215, 220"
+          />
+        </div>
+      </section>
+
+      <section id="github" className="section github-activity-section">
+        <div className="github-heading reveal">
+          <ShinyText
+            text={copy.githubKicker}
+            className="experience-work-history"
+            speed={4.5}
+            color="rgba(176, 182, 191, 0.72)"
+            shineColor="rgba(255, 255, 255, 0.95)"
+            spread={88}
+            yoyo
+            delay={0.3}
+          />
+          <h2 className="experience-title github-title">{copy.githubTitle}</h2>
+        </div>
+        <div className="github-panel reveal">
+          <GithubProfile
+            username="Noval-code"
+            theme="dark"
+            colors={["#2b3038", "#57606d", "#9aa4b2", "#dfe4ea"]}
+            empty="#16191f"
+            mode="3d"
+            blocks="skyline"
+            stats="inline"
           />
         </div>
       </section>

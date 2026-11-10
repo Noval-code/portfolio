@@ -767,6 +767,52 @@ h1 {
   pointer-events: auto;
 }
 
+/* ---------- GitHub Activity ---------- */
+.github-activity-section {
+  padding-top: 32px;
+}
+
+.github-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 28px;
+}
+
+.github-heading .experience-work-history {
+  margin: 0;
+}
+
+.github-title {
+  max-width: none;
+}
+
+.github-panel {
+  position: relative;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(223, 228, 234, 0.08), transparent 34rem),
+    rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+}
+
+.github-panel .github-activity {
+  font-family: inherit;
+}
+
+.github-panel .ga-header p {
+  margin: 0;
+}
+
+@media (max-width: 620px) {
+  .github-panel {
+    padding: 16px 14px 20px;
+    border-radius: 22px;
+  }
+}
+
 @media (max-width: 767px) {
   .skills-sticker {
     left: auto;
