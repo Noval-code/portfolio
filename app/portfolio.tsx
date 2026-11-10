@@ -862,7 +862,8 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             theme="dark"
             colors={["#2b3038", "#57606d", "#9aa4b2", "#dfe4ea"]}
             empty="#16191f"
-            mode="3d"
+            mode="2d"
+            shape="rounded"
             blocks="skyline"
             stats="inline"
           />
