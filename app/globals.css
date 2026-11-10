@@ -789,7 +789,7 @@ h1 {
 
 .github-panel {
   position: relative;
-  padding: clamp(18px, 3vw, 32px);
+  padding: clamp(12px, 1.8vw, 18px);
   border: 1px solid var(--line);
   border-radius: 28px;
   background:
@@ -808,7 +808,7 @@ h1 {
 
 @media (max-width: 620px) {
   .github-panel {
-    padding: 16px 14px 20px;
+    padding: 12px 10px 16px;
     border-radius: 22px;
   }
 }

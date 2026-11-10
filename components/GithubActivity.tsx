@@ -27,7 +27,7 @@ export type ActivityDisplay = typeof DISPLAY;
 const DAY_MS = 86400000;
 const WEEKS = 53;
 /** 2D cell and gap: plain, and roomier when each cell shows its count. */
-const GRID = { plain: { cell: 13, gap: 4 }, counts: { cell: 16, gap: 3 } };
+const GRID = { plain: { cell: 16, gap: 4 }, counts: { cell: 16, gap: 3 } };
 /** The Mon, Wed, Fri column and its margin, with a little to spare so every week still fits. */
 const WEEKDAY_GUTTER = 28;
 
