@@ -86,11 +86,7 @@ export default async function ArticlePage({
           </div>
         </header>
         <div className="article-prose prose prose-invert max-w-none">
-          {content.type === "sanity" ? (
-            <PortableBody body={content.body} />
-          ) : (
-            <content.Component />
-          )}
+          <PortableBody body={content.body} />
         </div>
 
         <nav className="article-nav" aria-label="More articles">

@@ -53,7 +53,7 @@ export async function fetchSanityPosts(): Promise<SanityPost[]> {
   try {
     return await sanityClient.fetch<SanityPost[]>(postsQuery);
   } catch {
-    // Project ID belum valid / offline → fallback ke MDX statis.
+    // Project ID belum valid / offline → kembalikan daftar kosong.
     return [];
   }
 }
