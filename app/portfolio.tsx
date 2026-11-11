@@ -12,6 +12,7 @@ import ShinyText from "../components/ShinyText";
 import MagicBento, { type BentoCardData } from "../components/MagicBento";
 import StickerPeel from "../components/StickerPeel";
 import GithubProfile from "../components/GithubActivity";
+import LangToggle from "../components/LangToggle";
 import {
   Brain,
   MessageSquareText,
@@ -29,7 +30,7 @@ import type { PortfolioCms } from "../lib/sanity/projects";
 
 const content = {
   en: {
-    nav: { about: "About", work: "Work", experience: "Experience", skills: "Skills", certs: "Certs", blog: "Blog", contact: "Contact", lang: "EN" },
+    nav: { about: "About", work: "Work", experience: "Experience", skills: "Skills", certs: "Certs", blog: "Blog", contact: "Contact" },
     heroViewWork: "View Work",
     heroDownloadCv: "Download CV",
     heroSubtext:
@@ -110,7 +111,7 @@ const content = {
     ],
   },
   id: {
-    nav: { about: "Tentang", work: "Karya", experience: "Pengalaman", skills: "Skill", certs: "Sertifikat", blog: "Blog", contact: "Kontak", lang: "ID" },
+    nav: { about: "Tentang", work: "Karya", experience: "Pengalaman", skills: "Skill", certs: "Sertifikat", blog: "Blog", contact: "Kontak" },
     heroViewWork: "Lihat Karya",
     heroDownloadCv: "Unduh CV",
     heroSubtext:
@@ -583,14 +584,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
           <a href="#contact">{navLabels.contact}</a>
         </div>
         <div className="nav-actions">
-          <button
-            type="button"
-            className="nav-control"
-            aria-label="Toggle language"
-            onClick={() => setLanguage((current) => (current === "en" ? "id" : "en"))}
-          >
-            {navLabels.lang}
-          </button>
+          <LangToggle language={language} onChange={setLanguage} />
           <button
             type="button"
             className="nav-menu-toggle"

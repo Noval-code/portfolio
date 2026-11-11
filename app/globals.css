@@ -151,31 +151,97 @@ main {
   gap: 8px;
 }
 
-.nav-control {
+.lang-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
   min-height: 34px;
+  padding: 3px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.055);
-  color: var(--text);
+  transition: border-color 220ms ease, background 220ms ease, padding 360ms ease;
+}
+
+.lang-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+.lang-option {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 36px;
+  min-height: 26px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
   cursor: pointer;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  padding: 0 12px;
-  transition: 220ms ease, padding 360ms ease, font-size 360ms ease;
+  transition: color 220ms ease, background 260ms ease, box-shadow 260ms ease;
 }
 
-.nav-control:hover {
-  border-color: rgba(255, 255, 255, 0.32);
+.lang-option:hover {
+  color: var(--text);
+}
+
+.lang-option.is-active {
   background: var(--panel-strong);
-  transform: translateY(-1px);
+  color: var(--text);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
-.nav-compact .nav-control {
+.lang-option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.lang-option-label {
+  position: relative;
+  z-index: 1;
+}
+
+.lang-ripple {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  transform: scale(0);
+  animation: lang-ripple 560ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+@keyframes lang-ripple {
+  0% {
+    opacity: 0.9;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.nav-compact .lang-toggle {
   min-height: 30px;
-  padding: 0 10px;
-  font-size: 0.72rem;
+  padding: 2px;
+}
+
+.nav-compact .lang-option {
+  min-width: 32px;
+  min-height: 24px;
+  padding: 0 7px;
+  font-size: 0.66rem;
 }
 
 .nav-menu-toggle {
@@ -2181,10 +2247,16 @@ h1 {
     height: 28px;
   }
 
-  .nav-control {
+  .lang-toggle {
     min-height: 30px;
-    padding: 0 8px;
-    font-size: 0.7rem;
+    padding: 2px;
+  }
+
+  .lang-option {
+    min-width: 32px;
+    min-height: 24px;
+    padding: 0 7px;
+    font-size: 0.66rem;
   }
 
   .nav-menu-toggle {
@@ -2198,12 +2270,6 @@ h1 {
 
   .nav-menu-toggle {
     display: inline-flex;
-  }
-
-  .nav-control {
-    min-height: 32px;
-    padding: 0 10px;
-    font-size: 0.72rem;
   }
 
   .mobile-menu {
