@@ -579,7 +579,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
           <a href="#experience">{navLabels.experience}</a>
           <a href="#skills">{navLabels.skills}</a>
           <a href="#certificates">{navLabels.certs}</a>
-          <Link href="/blog">{navLabels.blog}</Link>
+          <a href="#blog">{navLabels.blog}</a>
           <a href="#contact">{navLabels.contact}</a>
         </div>
         <div className="nav-actions">
@@ -636,12 +636,12 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         >
           {navLabels.certs}
         </a>
-        <Link
-          href="/blog"
+        <a
+          href="#blog"
           onClick={() => setIsMenuOpen(false)}
         >
           {navLabels.blog}
-        </Link>
+        </a>
         <a
           href="#contact"
           onClick={() => setIsMenuOpen(false)}
