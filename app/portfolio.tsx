@@ -40,7 +40,6 @@ const content = {
       "Hi! I'm Muhammad Noval Aula, based in Slawi, Tegal — a Full-Stack Developer with 4 years of experience in web development.",
     aboutBody: [
       "Hi! I'm Muhammad Noval Aula, based in Slawi, Tegal — a Full-Stack Developer with 4 years of experience in web development. I enjoy building web applications that are not only visually appealing but also functional, scalable, and designed to solve real-world problems.",
-      "Most recently, I developed a multi-tenant Point of Sales (POS) system with membership features for cafes. The system is currently running at Sekapa House, with planned rollouts at Depot Wahid and Sempati, covering transaction processing, product management, member registration, loyalty points, and sales reporting.",
       "For me, being a developer is not just about writing code, but also about understanding problems and turning ideas into meaningful solutions through technology.I'm always open to new opportunities, exciting challenges, and collaborations. Feel free to reach out! 🚀",
     ],
     educationTitle: "Education",
@@ -120,7 +119,6 @@ const content = {
       "Hai! Aku Muhammad Noval Aula, berbasis di Slawi, Tegal — seorang Fullstack Developer dengan pengalaman 4 tahun di bidang web development.",
     aboutBody: [
       "Hai! Aku Muhammad Noval Aula, berbasis di Slawi, Tegal — seorang Full-Stack Developer dengan pengalaman 4 tahun di bidang web development. Aku senang membangun aplikasi web yang tidak hanya menarik secara visual tetapi juga fungsional, scalable, dan dirancang untuk menyelesaikan masalah nyata.",
-      "Belakangan ini, aku mengembangkan sistem Point of Sales (POS) multi-tenant dengan fitur membership untuk cafe. Sistem ini saat ini berjalan di Sekapa House, dengan rencana penerapan di Depot Wahid dan Sempati, mencakup pemrosesan transaksi, pengelolaan produk, pendaftaran member, poin loyalitas, dan laporan penjualan.",
       "Bagiku, menjadi developer bukan sekadar menulis kode, tetapi juga tentang memahami masalah dan mengubah ide menjadi solusi yang bermakna melalui teknologi. Aku selalu terbuka untuk peluang, tantangan, dan kolaborasi baru. Jangan ragu untuk menghubungi! 🚀",
     ],
     educationTitle: "Pendidikan",
@@ -467,50 +465,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
         },
       });
 
-      const hero = root.current?.querySelector<HTMLElement>(".hero");
-      const portrait = root.current?.querySelector<HTMLElement>(".hero-portrait");
-      const reflection = root.current?.querySelector<HTMLElement>(".lens-reflection");
       const cleanups: Array<() => void> = [];
-
-      if (hero && portrait && reflection && window.matchMedia("(pointer: fine)").matches) {
-        const rotateX = gsap.quickTo(portrait, "rotationX", { duration: 0.6, ease: "power3.out" });
-        const rotateY = gsap.quickTo(portrait, "rotationY", { duration: 0.6, ease: "power3.out" });
-        const moveX = gsap.quickTo(portrait, "x", { duration: 0.7, ease: "power3.out" });
-        const moveY = gsap.quickTo(portrait, "y", { duration: 0.7, ease: "power3.out" });
-        const shineX = gsap.quickTo(reflection, "xPercent", { duration: 0.55, ease: "power3.out" });
-        const shineY = gsap.quickTo(reflection, "yPercent", { duration: 0.55, ease: "power3.out" });
-
-        const onPointerMove = (event: PointerEvent) => {
-          const rect = hero.getBoundingClientRect();
-          const nx = (event.clientX - rect.left) / rect.width - 0.5;
-          const ny = (event.clientY - rect.top) / rect.height - 0.5;
-
-          rotateX(ny * -7);
-          rotateY(nx * 10);
-          moveX(nx * 22);
-          moveY(ny * 14);
-          shineX(nx * 42);
-          shineY(ny * 28);
-        };
-
-        const onPointerLeave = () => {
-          rotateX(0);
-          rotateY(0);
-          moveX(0);
-          moveY(0);
-          shineX(0);
-          shineY(0);
-        };
-
-        hero.addEventListener("pointermove", onPointerMove);
-        hero.addEventListener("pointerleave", onPointerLeave);
-        gsap.set(portrait, { transformPerspective: 900, transformOrigin: "50% 48%" });
-
-        cleanups.push(() => {
-          hero.removeEventListener("pointermove", onPointerMove);
-          hero.removeEventListener("pointerleave", onPointerLeave);
-        });
-      }
 
       const aboutAvatar = root.current?.querySelector<HTMLElement>(".about-avatar-card");
       const intro = root.current?.querySelector<HTMLElement>(".intro");
