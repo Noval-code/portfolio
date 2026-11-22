@@ -779,7 +779,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             enableStars
             enableSpotlight
             enableBorderGlow
-            enableTilt
+            enableTilt={false}
             enableMagnetism
             clickEffect
             spotlightRadius={300}
