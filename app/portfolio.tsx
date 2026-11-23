@@ -519,14 +519,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
       <div className="progress-line" />
       <nav className="nav">
         <a href="#top" className="brand" aria-label="Noval Portfolio">
-          <Image
-            src="/Logo.png"
-            alt="Noval Logo"
-            width={36}
-            height={36}
-            className="brand-logo"
-            priority
-          />
+          noval.port
         </a>
         <div className="nav-links">
           <a href="#about">{navLabels.about}</a>
