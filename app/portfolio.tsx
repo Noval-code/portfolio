@@ -2,16 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { motion, AnimatePresence } from "motion/react";
-import Ferrofluid from "../components/Ferrofluid";
+const Ferrofluid = dynamic(() => import("../components/Ferrofluid"), { ssr: false });
 import ShinyText from "../components/ShinyText";
 import MagicBento, { type BentoCardData } from "../components/MagicBento";
 import StickerPeel from "../components/StickerPeel";
-import GithubProfile from "../components/GithubActivity";
+const GithubProfile = dynamic(() => import("../components/GithubActivity").then((m) => m.default), { ssr: false });
 import LangToggle from "../components/LangToggle";
 import {
   Brain,
@@ -22,7 +23,7 @@ import {
 } from "lucide-react";
 import BlogCard from "../components/BlogCard";
 import ScrollReveal from "../components/ScrollReveal";
-import ReflectiveCard from "../components/ReflectiveCard";
+const ReflectiveCard = dynamic(() => import("../components/ReflectiveCard").then((m) => m.default), { ssr: false });
 import ProjectsSection from "../components/portfolio/ProjectsSection";
 import ExperienceSection from "../components/portfolio/ExperienceSection";
 import type { PostMeta } from "../lib/blog";
