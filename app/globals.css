@@ -1467,6 +1467,41 @@ h1 {
   display: block;
 }
 
+.experience-item-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.experience-item-chevron {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--muted);
+  transition: transform 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.experience-animated-list .item.selected .experience-item-chevron {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
 .experience-item-head {
   display: flex;
   flex-wrap: wrap;
