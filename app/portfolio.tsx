@@ -991,6 +991,7 @@ export default function Portfolio({ cms }: { cms: PortfolioCms }) {
             blurStrength={6}
             shine={1}
             glare={0.5}
+            enableTilt={false}
             width="100%"
             height={420}
             radius={32}
