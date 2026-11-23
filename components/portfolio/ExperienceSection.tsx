@@ -26,7 +26,7 @@ export default function ExperienceSection({
   experience,
 }: ExperienceSectionProps) {
   const [openIndexes, setOpenIndexes] = useState<Set<number>>(
-    () => new Set(experience.map((_, index) => index)),
+    () => new Set(experience.length > 0 ? [0] : []),
   );
 
   const toggle = (index: number) => {
