@@ -32,7 +32,7 @@ const GRID = { plain: { cell: 16, gap: 4 }, counts: { cell: 16, gap: 3 } };
 const WEEKDAY_GUTTER = 28;
 
 /** 3D looks, each a pairing of heatmap-ui's block style and column shape. */
-export const BLOCK_STYLES = {
+const BLOCK_STYLES = {
   skyline: { blockStyle: "building", shape: "rectangle" },
   lego: { blockStyle: "lego", shape: "rectangle" },
   blocks: { blockStyle: "solid", shape: "rectangle" },
@@ -46,7 +46,7 @@ function today() {
   return new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 }
 
-export function parseGithubUsername(value: string) {
+function parseGithubUsername(value: string) {
   const match = value.trim().match(/^https?:\/\/(?:www\.)?github\.com\/([^/?#]+)/i);
   const username = (match?.[1] ?? value.trim()).replace(/^@/, "");
   if (!/^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i.test(username)) {
@@ -56,7 +56,7 @@ export function parseGithubUsername(value: string) {
 }
 
 /** Every public contribution day since the account began, up to today. */
-export async function fetchGithubContributions(username: string, signal?: AbortSignal): Promise<Contribution[]> {
+async function fetchGithubContributions(username: string, signal?: AbortSignal): Promise<Contribution[]> {
   const handle = parseGithubUsername(username);
   const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(handle)}?y=all`, { signal });
   if (!response.ok) throw new Error(response.status === 404 ? "That GitHub profile could not be found." : "The contribution service is unavailable. Please try again.");
@@ -76,7 +76,7 @@ export async function fetchGithubContributions(username: string, signal?: AbortS
 }
 
 /** Exactly matches CalendarHeatmap's Sunday-aligned columns, including a partial last week. */
-export function activityRange(contributions: readonly Contribution[], to: string, weeks: number) {
+function activityRange(contributions: readonly Contribution[], to: string, weeks: number) {
   const end = new Date(to + "T00:00:00Z");
   const start = new Date(end.getTime() - (end.getUTCDay() + (weeks - 1) * 7) * DAY_MS);
   const from = start.toISOString().slice(0, 10);
@@ -84,7 +84,7 @@ export function activityRange(contributions: readonly Contribution[], to: string
 }
 
 /** The dates a period covers. A calendar year stops at `to` while it is still under way. */
-export function periodRange(contributions: readonly Contribution[], period: ActivityPeriod, to: string) {
+function periodRange(contributions: readonly Contribution[], period: ActivityPeriod, to: string) {
   if (period === "last") return activityRange(contributions, to, WEEKS);
   const from = `${period}-01-01`;
   const end = `${period}-12-31` < to ? `${period}-12-31` : to;
@@ -92,11 +92,11 @@ export function periodRange(contributions: readonly Contribution[], period: Acti
 }
 
 /** Years with data, newest first. */
-export function activityYears(contributions: readonly Contribution[], to: string) {
+function activityYears(contributions: readonly Contribution[], to: string) {
   return [...new Set(contributions.filter(day => day.date <= to).map(day => Number(day.date.slice(0, 4))))].sort((a, b) => b - a);
 }
 
-export function activityStats(days: readonly Contribution[]) {
+function activityStats(days: readonly Contribution[]) {
   let total = 0, activeDays = 0, peak = 0, peakDate = "", longestStreak = 0, streak = 0, streakFrom = "", streakTo = "", runFrom = "";
   let previous = 0;
   for (const day of [...days].sort((a, b) => a.date.localeCompare(b.date))) {
@@ -234,7 +234,7 @@ const STYLES = `
 }
 @media (prefers-reduced-motion:reduce){.ga-listbox{animation:none}}`;
 
-export type GithubActivityProps = {
+type GithubActivityProps = {
   contributions: readonly Contribution[];
   /** Latest day to show. Defaults to the newest day in `contributions`. */
   to?: string;
@@ -260,7 +260,7 @@ export type GithubActivityProps = {
 };
 
 /** Data-driven view: pass daily counts from GitHub or your own backend. */
-export function GithubActivity({ contributions, to: toProp, username, theme = THEME, colors = COLORS, empty = EMPTY, mode = MODE, shape = SHAPE, blocks = BLOCKS, period: periodProp, onPeriodChange, stats: layout = STATS, font = FONT, tint = TINT, display: displayProp, showStats = true, compact = false }: GithubActivityProps) {
+function GithubActivity({ contributions, to: toProp, username, theme = THEME, colors = COLORS, empty = EMPTY, mode = MODE, shape = SHAPE, blocks = BLOCKS, period: periodProp, onPeriodChange, stats: layout = STATS, font = FONT, tint = TINT, display: displayProp, showStats = true, compact = false }: GithubActivityProps) {
   const display = { ...DISPLAY, ...displayProp };
   const to = toProp ?? (contributions.reduce((latest, day) => (day.date > latest ? day.date : latest), "") || today());
   const years = useMemo(() => activityYears(contributions, to), [contributions, to]);

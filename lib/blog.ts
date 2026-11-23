@@ -25,7 +25,7 @@ let sanityPostsCache: SanityPost[] | null = null;
 let sanityCacheTime = 0;
 const SANITY_CACHE_TTL = 60_000; // 1 menit
 
-export async function getSanityPosts(): Promise<SanityPost[]> {
+async function getSanityPosts(): Promise<SanityPost[]> {
   const { fetchSanityPosts } = await postFetchModule();
 
   if (typeof window !== "undefined") {

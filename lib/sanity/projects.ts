@@ -64,7 +64,7 @@ const certificatesQuery = groq`*[_type == "certificate" && defined(title)] | ord
 
 // ---------- Fetch ----------
 
-export async function fetchSanityProjects(): Promise<SanityProject[]> {
+async function fetchSanityProjects(): Promise<SanityProject[]> {
   try {
     return await sanityClient.fetch<SanityProject[]>(projectsQuery);
   } catch {
@@ -72,7 +72,7 @@ export async function fetchSanityProjects(): Promise<SanityProject[]> {
   }
 }
 
-export async function fetchSanityCertificates(): Promise<SanityCertificate[]> {
+async function fetchSanityCertificates(): Promise<SanityCertificate[]> {
   try {
     return await sanityClient.fetch<SanityCertificate[]>(certificatesQuery);
   } catch {
@@ -81,14 +81,6 @@ export async function fetchSanityCertificates(): Promise<SanityCertificate[]> {
 }
 
 // Mapping UI dipindah ke ./project-mappers (tanpa dependency next-sanity)
-export {
-  projectImageUrl,
-  certificateImageUrl,
-  sanityProjectToUi,
-  sanityCertificateToUi,
-} from "./project-mappers";
-export type { UiProject, UiCertificate } from "./project-mappers";
-
 import type { BlogLang, PostMeta } from "../blog";
 import { getSortedPosts } from "../blog";
 import { sanityProjectToUi, sanityCertificateToUi, type UiProject, type UiCertificate } from "./project-mappers";

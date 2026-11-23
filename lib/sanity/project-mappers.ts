@@ -33,11 +33,11 @@ export interface UiCertificate {
  * (image-url hanya butuh projectId/dataset, bukan fetch client.)
  */
 
-export function projectImageUrl(project: SanityProject): string | undefined {
+function projectImageUrl(project: SanityProject): string | undefined {
   return project.image?.asset?._ref ? urlForImage(project.image).url() : undefined;
 }
 
-export function certificateImageUrl(cert: SanityCertificate): string | undefined {
+function certificateImageUrl(cert: SanityCertificate): string | undefined {
   return cert.image?.asset?._ref ? urlForImage(cert.image).url() : undefined;
 }
 
